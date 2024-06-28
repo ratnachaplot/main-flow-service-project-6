@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="image1.jpg" alt="Image 1">
+            <div class="caption">BLUE LANDSCAPE</div>
+        </div>
+        <div class="gallery-item">
+            <img src="image2.jpg" alt="Image 2">
+            <div class="caption">SUNSET</div>
+        </div>
+        <div class="gallery-item">
+            <img src="image3.jpg" alt="Image 3">
+            <div class="caption">NATURE</div>
+        </div>
+        <div class="gallery-item">
+            <img src="image4.jpg" alt="Image 4">
+            <div class="caption">PEACE</div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+        <span class="fullscreen" id="fullscreen">&#x26F6;</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

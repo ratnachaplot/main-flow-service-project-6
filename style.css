@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    opacity: 0.8;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#lightbox-caption {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fullscreen {
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.fullscreen:hover,
+.fullscreen:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
